@@ -1,0 +1,193 @@
+footer {
+    font-family: $ff;
+    width: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: auto;
+
+    display: block;
+
+    .footer {
+        @include center-both;
+        display: grid;
+        grid-template-columns: 1fr 5% 1fr 3% 1fr 3% 1fr 3% max-content;
+        grid-template-rows: 80px 1fr;
+        width: 100%;
+        // gap: 60px;
+
+        &-desktop-logo {
+            position: relative;
+            justify-self: start;
+            grid-row: 1 / 2;
+            align-self: end;
+            left: 5px;
+            bottom: -20px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: $color-dark-accent;
+                width: 12vw;
+                max-width: 200px;
+                height: 1px;
+                bottom: -5px;
+                left: 0px;
+            }
+        }
+
+        &-mobile-logo {
+            visibility: hidden;
+        }
+
+        &-site-menu-items {
+            grid-row: 2 / 3;
+            margin-top: 45px;
+            font-size: $fs-500;
+        }
+
+        &-about-menu-heading {
+            // margin-top: 10px;
+            align-self: end;
+            grid-column: 3 / 4;
+            font-weight: $ff-bold;
+        }
+
+        &-about-menu-items {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            margin-top: 20px;
+        }
+
+        &-help-heading {
+            grid-column: 5 / 6;
+            align-self: end;
+            font-weight: $ff-bold;
+        }
+
+        &-help-menu-items {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+            margin-top: 20px;
+        }
+
+        &-gift-section {
+            grid-column: 7 / 8;
+            grid-row: 1 / 3;
+
+            ul {
+                margin-top: -40px;
+            }
+
+            li {
+                margin-bottom: 30px;
+                padding-left: 20px;
+            }
+
+            .gift-card {
+                list-style-image: url("../images/icons/gift.svg");
+            }
+
+            .find-store {
+                list-style-image: url("../images/icons/pointer.svg");
+            }
+
+            .feedback {
+                list-style-image: url("../images/icons/feedback.svg");
+            }
+        }
+
+        &-subscribe {
+            grid-column: 9 / 10;
+            grid-row: 1 / 3;
+            margin-bottom: 120px;
+
+            .subscribe-heading {
+                font-weight: $ff-bold;
+            }
+
+            input {
+                margin-top: 15px;
+                margin-right: 0px;
+                padding: 15px 20px;
+                width: 240px;
+                border-radius: 0px;
+                border: 1px solid #333;
+                // height: 50px;
+            }
+
+            .join-btn {
+                padding: 16px 20px;
+                margin-left: -5px;
+                background-color: $color-dark-accent;
+                color: white;
+                border: none;
+            }
+        }
+
+        &-legal {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        &-padding {
+            padding-top: 40px;
+        }
+
+        &-divide {
+            margin-top: 20px;
+            height: 0.5px;
+            width: 100%;
+            background-color: $color-dark-accent;
+        }
+    }
+
+    svg {
+        width: 130px;
+        height: 80px;
+        fill: $color-dark-accent;
+    }
+
+    ul {
+        @include list-styles;
+    }
+
+    li {
+        padding-bottom: 20px;
+    }
+
+    a {
+        @include link-fix;
+        color: black;
+
+        &:hover {
+            @include hover;
+        }
+    }
+
+    @include tablet {
+        .footer {
+            display: none;
+        }
+
+        .mobile {
+            @include center-both;
+            display: flex;
+            flex-direction: column;
+
+            .footer-mobile-logo {
+                @include center-both;
+                visibility: visible;
+            }
+        }
+    }
+
+    // .gift-section-flex {
+    //     display: flex;
+    //     gap: 10px;
+    // }
+
+    // &-about-nav {
+    //     margin-top: -30px;
+    // }
+}

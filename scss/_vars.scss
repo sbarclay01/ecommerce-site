@@ -1,0 +1,117 @@
+// COLORS
+
+$color-bg: #faf9f9;
+$color-dark-accent: #555b6e;
+$color-primary-accent: #ffd6ba;
+$color-secondary-accent: #89b0ae;
+$color-tertiary-accent: #bee3db;
+$color-hero-title: #ff9a67;
+
+// FONTS
+
+$ff: trade-gothic-next, sans-serif;
+$ff-regular: 400;
+$ff-bold: 700;
+$ff-heavy: 800;
+$ff-accent: le-monde-livre-std, serif;
+
+// FONT SIZES
+
+$fs-900: clamp(3vw, calc(7vw + 1rem), 9.25rem);
+$fs-800: clamp(2.5vw, calc(5vw + 1rem), 7.25rem);
+$fs-700: clamp(1.5rem, calc(2vw + 1rem), 3rem);
+$fs-600: 2rem;
+$fs-500: 1.3rem;
+$fs-400: 1rem;
+$fs-300: 0.8rem;
+$fs-200: 0.6rem;
+
+// BREAKPOINTS
+$mobile: 600px;
+$tablet: 900px;
+$desktop: 900px;
+
+// MIXINS
+
+@mixin list-styles {
+    list-style-type: none;
+}
+
+@mixin center-both {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin link-fix {
+    text-decoration: none;
+}
+
+@mixin hover {
+    color: lighten($color-dark-accent, 30%);
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin media($keys...) {
+    @each $key in $keys {
+        @if ($key == mobile) {
+            @include mobile {
+                @content;
+            }
+        } @else if ($key == tablet) {
+            @include tablet {
+                @content;
+            }
+        } @else if ($key == desktop) {
+            @include desktop {
+                @content;
+            }
+        }
+    }
+}
+
+// Trade Gothic Next LT Pro Bold
+// font-family: trade-gothic-next, sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+// Trade Gothic Next LT Pro Bold Italic
+// font-family: trade-gothic-next, sans-serif;
+// font-weight: 700;
+// font-style: italic;
+
+// Trade Gothic Next LT Pro Italic
+// font-family: trade-gothic-next, sans-serif;
+// font-weight: 400;
+// font-style: italic;
+
+// Trade Gothic Next LT Pro Regular
+// font-family: trade-gothic-next, sans-serif;
+// font-weight: 400;
+// font-style: normal;
+
+// Trade Gothic Next SR Pro Bold
+// font-family: tgn-soft-round, sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+// Trade Gothic Next LT Pro Heavy
+// font-family: trade-gothic-next,sans-serif;
+// font-weight: 800;
+// font-style: normal;

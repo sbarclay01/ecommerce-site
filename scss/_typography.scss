@@ -1,0 +1,25 @@
+@import url("https://use.typekit.net/pwn5eoq.css");
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    // color: black;
+    text-decoration: none;
+}
+
+.cta {
+    font-family: $ff;
+    font-weight: $ff-heavy;
+    font-size: $fs-700;
+    color: $color-bg;
+    text-transform: uppercase;
+}
